@@ -1,0 +1,118 @@
+{
+  "name": "controls",
+  "version": "0.3.0",
+  "title": "Controls",
+  "description": "Buttons, icon buttons, toggles, panels, banners, dialogs and help pages that draw with the theme's tokens, for web, Apple and Android.",
+  "facilities": [
+    {
+      "id": "controls",
+      "description": "Buttons, icon buttons, toggles, panels, banners, dialogs and help pages"
+    }
+  ],
+  "provides": [
+    {
+      "id": "controls",
+      "type": "ae/controls",
+      "version": "1.0.0",
+      "path": "interfaces/controls.json"
+    }
+  ],
+  "requires": [
+    {
+      "id": "theme",
+      "type": "ae/theme",
+      "version": "1.0.0",
+      "path": "interfaces/required/theme.json"
+    }
+  ],
+  "collect": [],
+  "dependencies": [],
+  "suites": [
+    {
+      "id": "web",
+      "argv": [
+        "node",
+        "--test",
+        "tests/web.test.ts"
+      ],
+      "scope": "required-local",
+      "tools": {
+        "node": "26.5.0"
+      }
+    },
+    {
+      "id": "apple",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "apple"
+      ],
+      "scope": "platform",
+      "fixtures": [
+        "tests/apple/main.swift"
+      ],
+      "tools": {
+        "python3": "3.12.8",
+        "swiftc": "6.4.2"
+      }
+    },
+    {
+      "id": "android",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "android"
+      ],
+      "scope": "platform",
+      "fixtures": [
+        "tests/android/Main.kt"
+      ],
+      "tools": {
+        "python3": "3.12.8",
+        "kotlinc": "2.2.0",
+        "java": "26.0.1"
+      }
+    }
+  ],
+  "tools": {
+    "node": "26.5.0",
+    "python3": "3.12.8",
+    "swiftc": "6.4.2",
+    "kotlinc": "2.2.0",
+    "java": "26.0.1"
+  },
+  "platforms": [
+    "web",
+    "apple",
+    "android"
+  ],
+  "text": {
+    "purpose": "`controls` is the set of small interface pieces every screen is made from: text buttons (primary, outlined, link), round icon buttons (filled, outlined, plain) with an optional pulsing halo meaning \"you can tap this\", round on/off toggles (microphone, camera, sound), panels (with an active state), accent banners, modal dialogs, and a scrolling help page. It also holds the Material icon paths used by the web and Apple parts, a badged-icon helper, and number and time text (`formatCount`, `mmss`). All visible text is passed in already translated; nothing in it is specific to a game.",
+    "userInputs": "No installer settings. Colours, radii and spacing come from the `theme` component (CSS variables on the web, a `ThemeSet` on Apple and Android).",
+    "integration": "Web: import `h` from `web/dom.ts` and the builders from `web/controls.ts`, `icon` and `badgedIcon` from `web/icons.ts`, and link `web/controls.css` after the theme's `theme.css`. Mark elements a guided tour should ring with `attrs: { \"data-guide\": \"name\" }`. Apple: compile the Swift files together with the theme's Swift files; set `.controlsTheme(ThemeSet.named(...))` once near the root; use `Panel`, `PromptBanner`, `RoundIconButton`, `ToggleButton`, `HelpBulb`, `BadgedIcon`, `HelpPage`, `.pulseHalo(_:)` and `.phoneColumn()`. Android: add the Kotlin files to a Compose module with Material 3 and the extended Material icons, wrap the tree in `ControlsTheme(theme) { ... }`, and use the same names. Sound on tap, analytics and navigation are the application's: pass them in `onClick`.",
+    "infrastructure": "None. Local drawing only; no accounts, network or deployment.",
+    "verification": "Node tests run the builders against a small stand-in page (`tests/fake-dom.ts`): classes per variant, accessible names, disabled buttons ignoring taps, toggles asking for the opposite state, dialogs closing on Escape and on the dim area exactly once, help pages dropping empty sections, number and time text, and that `controls.css` reads only variables the theme provides. The Apple check compiles and runs `tests/apple/main.swift` for macOS (all 19 icon paths parse to points inside the icon box, and the parser's relative, absolute, H, V and smooth-curve cases; text formatting against `tests/fixtures/format.json`) and type-checks every Swift file, with the theme component's, against the iOS simulator SDK. The Android check compiles `Format.kt` and runs `tests/android/Main.kt`; kotlinc was not available where this was written, so it has not been run, and the Compose views are only compiled by the application's Gradle build. Pixel output is not compared.",
+    "scenarios": "A lobby uses a filled icon button with a halo for \"start\" once enough people are seated; a settings row shows sound, microphone and camera toggles; \"how to play\" opens the help page with the recipe's translated sections; a leave action opens a dialog with two buttons.",
+    "updates": "Patch updates replace files only. The component keeps no data; removal deletes its files and the application's imports of them."
+  },
+  "agentInstructions": "Select `ourapps-ae/controls` for every client. Connect its `theme` requirement to the `theme` component's `theme` output. Pass translated text from the `translations` component into the builders; do not add strings here.",
+  "developerInstructions": "Supply translated labels at each call. For Android add `androidx.compose.material:material-icons-extended` and Material 3. For the web import `controls.css` once. To add an icon, add its 24 x 24 Material path to `web/icons.ts` and `apple/Sources/IconPaths.swift` (paths with arcs are refused by the Swift parser) and its `ImageVector` on Android.",
+  "suitability": {
+    "format": 1,
+    "jobs": [
+      "controls"
+    ],
+    "profiles": [
+      {
+        "id": "any",
+        "load": {},
+        "cost": "none",
+        "regions": [
+          "any"
+        ],
+        "compliance": []
+      }
+    ],
+    "notes": "Pure library; no provider limits apply."
+  }
+}

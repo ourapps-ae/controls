@@ -1,0 +1,48 @@
+/* Controls: reads the theme's CSS variables (--primary, --on-primary, --background, --surface, --edge, --text, --muted, --danger, --good). */
+button { font: inherit; cursor: pointer; border: 0; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--primary); outline-offset: 4px; }
+.muted { color: var(--muted); font-size: 13px; }
+.row { display: flex; align-items: center; gap: 8px; }
+.spread { justify-content: space-between; }
+.grow { flex: 1; }
+
+.panel { background: var(--surface); border: 1px solid var(--edge); border-radius: 16px; padding: 16px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 3px 6px rgba(0,0,0,.4); width: 100%; max-width: 100%; }
+.panel.active { border: 2px solid var(--primary); background: color-mix(in srgb, var(--primary) 12%, var(--surface)); }
+.panel .title { color: var(--primary); font-weight: 700; margin-bottom: 8px; }
+.banner { background: var(--surface); border: 1px solid var(--edge); border-radius: 16px; padding: 6px 8px 6px 16px; display: flex; align-items: center; gap: 4px; color: var(--primary); font-weight: 700; font-size: 15px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); width: 100%; max-width: 100%; }
+.banner .text { flex: 1; }
+
+.btn { background: var(--primary); color: var(--on-primary); font-weight: 600; padding: 12px 20px; border-radius: 999px; }
+.btn.block { width: 100%; }
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid color-mix(in srgb, var(--text) 40%, transparent); }
+.btn.link { background: transparent; color: var(--primary); padding: 8px 12px; }
+.btn.danger { color: var(--danger); }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.iconbtn { width: 36px; height: 36px; border-radius: 50%; background: transparent; color: var(--primary); font-size: 20px; display: inline-flex; align-items: center; justify-content: center; }
+.iconbtn.danger { color: var(--danger); }
+
+/* Pulsing halo: the one rule for "you can tap this". */
+.glow { position: relative; }
+.glow::before { content: ""; position: absolute; inset: -6px; border-radius: inherit; background: rgba(255,255,255,0.55); animation: pulse 1.4s ease-in-out infinite; z-index: -1; }
+@keyframes pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+/* Icon buttons and toggles */
+.icbtn { width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex: none; padding: 0; }
+.icbtn.gold { background: var(--primary); color: var(--on-primary); }
+.icbtn.gold:disabled { background: color-mix(in srgb, var(--primary) 35%, #3a362c); color: var(--on-primary); opacity: 0.7; cursor: default; }
+.icbtn.ghost { background: transparent; color: var(--primary); border: 1px solid color-mix(in srgb, var(--primary) 50%, transparent); }
+.icbtn.ghost:disabled { opacity: 0.4; cursor: default; }
+.icbtn.plain { background: transparent; color: var(--primary); width: 34px; height: 34px; }
+.ic-badged { position: relative; display: inline-flex; }
+.ic-badge { position: absolute; right: -7px; top: -6px; width: 13px; height: 13px; border-radius: 50%; background: var(--primary); color: var(--on-primary); display: inline-flex; align-items: center; justify-content: center; }
+.toggles { display: flex; justify-content: center; gap: 12px; }
+.toggle { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+.toggle.on { background: color-mix(in srgb, var(--primary) 25%, transparent); color: var(--primary); }
+.toggle.off { background: color-mix(in srgb, var(--danger) 45%, #2a1010); color: #fff; }
+.toggle:disabled { opacity: 0.5; cursor: default; }
+
+/* Dialogs and help */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 10; padding: 24px; }
+.modal .panel { background: color-mix(in srgb, var(--surface) 25%, #26241f); max-width: 400px; width: 100%; }
+.help p { white-space: pre-line; font-size: 15px; }
+.help h3 { color: var(--primary); margin: 16px 0 4px; font-size: 16px; }

@@ -1,0 +1,29 @@
+{
+  "id": "controls",
+  "type": "ae/controls",
+  "version": "1.0.0",
+  "description": "Buttons, icon buttons, toggles, panels, banners, dialogs and help pages that draw with the theme's tokens. Text is always supplied already translated.",
+  "operations": {
+    "h": { "arguments": ["tag:string", "attrs?:map<string,unknown>", "...children:Child[]"], "returns": "HTMLElement" },
+    "button": { "arguments": ["options:{label:string,onClick:()=>void,variant?:'primary'|'ghost'|'link',block?:boolean,danger?:boolean,glow?:boolean,disabled?:boolean,attrs?:map<string,string>}"], "returns": "HTMLButtonElement" },
+    "buttonClass": { "arguments": ["variant?:ButtonVariant", "opts?:{block?:boolean,danger?:boolean,glow?:boolean}"], "returns": "string" },
+    "iconButton": { "arguments": ["options:{icon?:IconName,content?:Node,label:string,onClick:()=>void,variant?:'filled'|'outlined'|'plain',glow?:boolean,disabled?:boolean,size?:number,attrs?:map<string,string>}"], "returns": "HTMLButtonElement" },
+    "iconButtonClass": { "arguments": ["variant?:IconButtonVariant", "glow?:boolean"], "returns": "string" },
+    "toggle": { "arguments": ["options:{on:boolean,icon:IconName,iconOff?:IconName,label:string,labelOff?:string,onChange:(next:boolean)=>void,disabled?:boolean,attrs?:map<string,string>}"], "returns": "HTMLButtonElement" },
+    "toggleView": { "arguments": ["on:boolean", "options:{icon:IconName,iconOff?:IconName,label:string,labelOff?:string}"], "returns": "{class:string,icon:IconName,label:string}" },
+    "panel": { "arguments": ["options:{title?:string,active?:boolean,className?:string,attrs?:map<string,string>}", "...children:Child[]"], "returns": "HTMLElement" },
+    "banner": { "arguments": ["text:string", "...trailing:Child[]"], "returns": "HTMLElement" },
+    "dialog": { "arguments": ["options:{title?:string,body:Child[],actions?:Child[],onClose?:()=>void}"], "returns": "{el:HTMLElement,close:()=>void}" },
+    "helpPage": { "arguments": ["options:{title:string,sections:{title:string,body:string}[],footer?:string,closeLabel:string,onClose:()=>void}"], "returns": "HTMLElement" },
+    "normaliseHelpSections": { "arguments": ["sections:HelpSection[]"], "returns": "HelpSection[]" },
+    "icon": { "arguments": ["name:IconName", "size?:number"], "returns": "SVGSVGElement" },
+    "badgedIcon": { "arguments": ["name:IconName", "badge:IconName", "size?:number"], "returns": "HTMLElement" },
+    "formatCount": { "arguments": ["n:number"], "returns": "string" },
+    "mmss": { "arguments": ["ms:number"], "returns": "string" }
+  },
+  "styles": { "web": "implementation/web/controls.css", "themeVariables": ["--primary", "--on-primary", "--background", "--surface", "--edge", "--text", "--muted", "--danger", "--good"] },
+  "native": {
+    "apple": ["Panel", "PromptBanner", "RoundIconButton", "ToggleButton", "HelpBulb", "BadgedIcon", "BackGlyph", "HelpPage", "SVGIcon", "pulseHalo", "controlsTheme", "formatCount", "mmss"],
+    "android": ["Panel", "PromptBanner", "RoundIconButton", "ToggleButton", "HelpBulb", "BadgedIcon", "BackIcon", "HelpPage", "pulseHalo", "ControlsTheme", "formatCount", "mmss", "textFor"]
+  }
+}

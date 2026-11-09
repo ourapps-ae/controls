@@ -1,0 +1,464 @@
+{
+  "format": 1,
+  "kind": "component",
+  "identity": {
+    "name": "ourapps-ae/controls",
+    "version": "0.3.0",
+    "sourceRevision": "19905b75dbea89fbfd424d67fe26c81aaed0e018",
+    "sourceTreeDigest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "licenceStatus": "deferred"
+  },
+  "facilities": [
+    {
+      "id": "controls",
+      "description": "Buttons, icon buttons, toggles, panels, banners, dialogs and help pages"
+    }
+  ],
+  "documents": {
+    "contract": "CONTRACT.md",
+    "interfaces": [
+      "interfaces/controls.json",
+      "interfaces/required/theme.json",
+      "suitability.json"
+    ],
+    "examples": [
+      "examples/consumer.ts"
+    ],
+    "licenceNotice": "LICENCE"
+  },
+  "collect": [],
+  "files": [
+    {
+      "path": "CONTRACT.md",
+      "executable": false
+    },
+    {
+      "path": "INSTRUCTIONS.md",
+      "executable": false
+    },
+    {
+      "path": "LICENCE",
+      "executable": false
+    },
+    {
+      "path": "SOURCE.md",
+      "executable": false
+    },
+    {
+      "path": "examples/consumer.ts",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/controls/ControlsTheme.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/controls/Format.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/controls/HelpPage.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/controls/IconButtons.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/controls/Panels.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/android/src/main/java/ae/controls/PulseHalo.kt",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/ControlsStyle.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/Format.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/HelpPage.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/IconButtons.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/IconPaths.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/Panels.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/PulseHalo.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/SVGIcon.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/apple/Sources/SVGPath.swift",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/controls.css",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/controls.ts",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/dom.ts",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/format.ts",
+      "executable": false
+    },
+    {
+      "path": "implementation/web/icons.ts",
+      "executable": false
+    },
+    {
+      "path": "interfaces/controls.json",
+      "executable": false
+    },
+    {
+      "path": "interfaces/required/theme.json",
+      "executable": false
+    },
+    {
+      "path": "suitability.json",
+      "executable": false
+    },
+    {
+      "path": "tests/android/Main.kt",
+      "executable": false
+    },
+    {
+      "path": "tests/apple/main.swift",
+      "executable": false
+    },
+    {
+      "path": "tests/fake-dom.ts",
+      "executable": false
+    },
+    {
+      "path": "tests/fixtures/format.json",
+      "executable": false
+    },
+    {
+      "path": "tests/fixtures/icons.json",
+      "executable": false
+    },
+    {
+      "path": "tests/native.py",
+      "executable": false
+    },
+    {
+      "path": "tests/web.test.ts",
+      "executable": false
+    },
+    {
+      "path": "tools.lock.json",
+      "executable": false
+    },
+    {
+      "path": "visual/definition.json",
+      "executable": false
+    },
+    {
+      "path": "visual/examples/connected.json",
+      "executable": false
+    },
+    {
+      "path": "visual/output/connected.png",
+      "executable": false
+    },
+    {
+      "path": "visual/output/connected.svg",
+      "executable": false
+    },
+    {
+      "path": "visual/output/description.md",
+      "executable": false
+    }
+  ],
+  "artefacts": [
+    {
+      "source": "implementation/android/src/main/java/ae/controls/ControlsTheme.kt",
+      "destination": "components/controls/android/src/main/java/ae/controls/ControlsTheme.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/controls/Format.kt",
+      "destination": "components/controls/android/src/main/java/ae/controls/Format.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/controls/HelpPage.kt",
+      "destination": "components/controls/android/src/main/java/ae/controls/HelpPage.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/controls/IconButtons.kt",
+      "destination": "components/controls/android/src/main/java/ae/controls/IconButtons.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/controls/Panels.kt",
+      "destination": "components/controls/android/src/main/java/ae/controls/Panels.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/android/src/main/java/ae/controls/PulseHalo.kt",
+      "destination": "components/controls/android/src/main/java/ae/controls/PulseHalo.kt",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/ControlsStyle.swift",
+      "destination": "components/controls/apple/Sources/ControlsStyle.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/Format.swift",
+      "destination": "components/controls/apple/Sources/Format.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/HelpPage.swift",
+      "destination": "components/controls/apple/Sources/HelpPage.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/IconButtons.swift",
+      "destination": "components/controls/apple/Sources/IconButtons.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/IconPaths.swift",
+      "destination": "components/controls/apple/Sources/IconPaths.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/Panels.swift",
+      "destination": "components/controls/apple/Sources/Panels.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/PulseHalo.swift",
+      "destination": "components/controls/apple/Sources/PulseHalo.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/SVGIcon.swift",
+      "destination": "components/controls/apple/Sources/SVGIcon.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/apple/Sources/SVGPath.swift",
+      "destination": "components/controls/apple/Sources/SVGPath.swift",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/controls.css",
+      "destination": "components/controls/web/controls.css",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/controls.ts",
+      "destination": "components/controls/web/controls.ts",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/dom.ts",
+      "destination": "components/controls/web/dom.ts",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/format.ts",
+      "destination": "components/controls/web/format.ts",
+      "template": false,
+      "executable": false
+    },
+    {
+      "source": "implementation/web/icons.ts",
+      "destination": "components/controls/web/icons.ts",
+      "template": false,
+      "executable": false
+    }
+  ],
+  "dependencies": [],
+  "provides": [
+    {
+      "id": "controls",
+      "type": "ae/controls",
+      "version": "1.0.0",
+      "path": "interfaces/controls.json"
+    }
+  ],
+  "requires": [
+    {
+      "id": "theme",
+      "type": "ae/theme",
+      "version": "1.0.0",
+      "path": "interfaces/required/theme.json"
+    }
+  ],
+  "visual": {
+    "definition": "visual/definition.json",
+    "examples": [
+      "visual/examples/connected.json"
+    ],
+    "outputs": [
+      "visual/output/connected.svg",
+      "visual/output/connected.png"
+    ],
+    "descriptions": [
+      "visual/output/description.md"
+    ]
+  },
+  "capabilities": {
+    "hosts": [],
+    "secrets": [],
+    "writes": [
+      "components/controls/android/src/main/java/ae/controls/ControlsTheme.kt",
+      "components/controls/android/src/main/java/ae/controls/Format.kt",
+      "components/controls/android/src/main/java/ae/controls/HelpPage.kt",
+      "components/controls/android/src/main/java/ae/controls/IconButtons.kt",
+      "components/controls/android/src/main/java/ae/controls/Panels.kt",
+      "components/controls/android/src/main/java/ae/controls/PulseHalo.kt",
+      "components/controls/apple/Sources/ControlsStyle.swift",
+      "components/controls/apple/Sources/Format.swift",
+      "components/controls/apple/Sources/HelpPage.swift",
+      "components/controls/apple/Sources/IconButtons.swift",
+      "components/controls/apple/Sources/IconPaths.swift",
+      "components/controls/apple/Sources/Panels.swift",
+      "components/controls/apple/Sources/PulseHalo.swift",
+      "components/controls/apple/Sources/SVGIcon.swift",
+      "components/controls/apple/Sources/SVGPath.swift",
+      "components/controls/web/controls.css",
+      "components/controls/web/controls.ts",
+      "components/controls/web/dom.ts",
+      "components/controls/web/format.ts",
+      "components/controls/web/icons.ts"
+    ]
+  },
+  "infrastructure": {
+    "accounts": [],
+    "costStatus": "unmeasured",
+    "deployedReason": "No deployed service; injected resources and local library functions only."
+  },
+  "verification": [
+    {
+      "id": "web",
+      "root": "package",
+      "argv": [
+        "node",
+        "--test",
+        "tests/web.test.ts"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5.0"
+      },
+      "fixtures": [
+        "tests/fixtures/format.json",
+        "tests/fixtures/icons.json"
+      ],
+      "locks": [
+        "tools.lock.json"
+      ],
+      "network": false,
+      "timeoutSeconds": 120,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    },
+    {
+      "id": "apple",
+      "root": "package",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "apple"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "python3": "3.12.8",
+        "swiftc": "6.4.2"
+      },
+      "fixtures": [
+        "tests/apple/main.swift"
+      ],
+      "locks": [
+        "tools.lock.json"
+      ],
+      "network": false,
+      "timeoutSeconds": 120,
+      "expectedExit": 0,
+      "scope": "platform",
+      "requirements": []
+    },
+    {
+      "id": "android",
+      "root": "package",
+      "argv": [
+        "python3",
+        "tests/native.py",
+        "android"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "python3": "3.12.8",
+        "kotlinc": "2.2.0",
+        "java": "26.0.1"
+      },
+      "fixtures": [
+        "tests/android/Main.kt"
+      ],
+      "locks": [
+        "tools.lock.json"
+      ],
+      "network": false,
+      "timeoutSeconds": 120,
+      "expectedExit": 0,
+      "scope": "platform",
+      "requirements": []
+    }
+  ],
+  "upgrade": {
+    "policy": "patch",
+    "migration": "files-only"
+  }
+}
