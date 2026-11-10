@@ -3,9 +3,9 @@
 ## For the agent
 Select `ourapps-ae/controls` for every client. Connect its `theme` requirement to the `theme` component's `theme` output. Pass translated text from the `translations` component into the builders; do not add strings here.
 
-- Select package `ourapps-ae/controls` version `0.3.0`.
+- Select package `ourapps-ae/controls` version `0.4.0`.
 - No installer settings.
-- Connect the provided `controls` (ae/controls 1.0.0) to the consumer that needs it.
+- Connect the provided `controls` (ae/controls 1.0.0, OpenRPC 1.3.2 document `interfaces/controls.json`) to the consumer that needs it.
 - Supply `theme` (ae/theme 1.0.0) from the component that provides it.
 - No accounts or keys are needed.
 

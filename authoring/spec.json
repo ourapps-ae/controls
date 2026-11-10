@@ -1,6 +1,6 @@
 {
   "name": "controls",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "title": "Controls",
   "description": "Buttons, icon buttons, toggles, panels, banners, dialogs and help pages that draw with the theme's tokens, for web, Apple and Android.",
   "facilities": [
@@ -22,7 +22,7 @@
       "id": "theme",
       "type": "ae/theme",
       "version": "1.0.0",
-      "path": "interfaces/required/theme.json"
+      "path": "interfaces/required-theme.json"
     }
   ],
   "collect": [],
@@ -91,7 +91,7 @@
     "userInputs": "No installer settings. Colours, radii and spacing come from the `theme` component (CSS variables on the web, a `ThemeSet` on Apple and Android).",
     "integration": "Web: import `h` from `web/dom.ts` and the builders from `web/controls.ts`, `icon` and `badgedIcon` from `web/icons.ts`, and link `web/controls.css` after the theme's `theme.css`. Mark elements a guided tour should ring with `attrs: { \"data-guide\": \"name\" }`. Apple: compile the Swift files together with the theme's Swift files; set `.controlsTheme(ThemeSet.named(...))` once near the root; use `Panel`, `PromptBanner`, `RoundIconButton`, `ToggleButton`, `HelpBulb`, `BadgedIcon`, `HelpPage`, `.pulseHalo(_:)` and `.phoneColumn()`. Android: add the Kotlin files to a Compose module with Material 3 and the extended Material icons, wrap the tree in `ControlsTheme(theme) { ... }`, and use the same names. Sound on tap, analytics and navigation are the application's: pass them in `onClick`.",
     "infrastructure": "None. Local drawing only; no accounts, network or deployment.",
-    "verification": "Node tests run the builders against a small stand-in page (`tests/fake-dom.ts`): classes per variant, accessible names, disabled buttons ignoring taps, toggles asking for the opposite state, dialogs closing on Escape and on the dim area exactly once, help pages dropping empty sections, number and time text, and that `controls.css` reads only variables the theme provides. The Apple check compiles and runs `tests/apple/main.swift` for macOS (all 19 icon paths parse to points inside the icon box, and the parser's relative, absolute, H, V and smooth-curve cases; text formatting against `tests/fixtures/format.json`) and type-checks every Swift file, with the theme component's, against the iOS simulator SDK. The Android check compiles `Format.kt` and runs `tests/android/Main.kt`; kotlinc was not available where this was written, so it has not been run, and the Compose views are only compiled by the application's Gradle build. Pixel output is not compared.",
+    "verification": "Node tests run the builders against a small stand-in page (`tests/fake-dom.ts`): classes per variant, accessible names, disabled buttons ignoring taps, toggles asking for the opposite state, dialogs closing on Escape and on the dim area exactly once, help pages dropping empty sections, number and time text, that `controls.css` reads only variables the theme provides, and that the OpenRPC interface's icon names and theme variables equal the code's and every method not marked native-only is an exported web function. The Apple check compiles and runs `tests/apple/main.swift` for macOS (all 19 icon paths parse to points inside the icon box, and the parser's relative, absolute, H, V and smooth-curve cases; text formatting against `tests/fixtures/format.json`) and type-checks every Swift file, with the theme component's, against the iOS simulator SDK. The Android check compiles `Format.kt` and runs `tests/android/Main.kt`; kotlinc was not available where this was written, so it has not been run, and the Compose views are only compiled by the application's Gradle build. Pixel output is not compared.",
     "scenarios": "A lobby uses a filled icon button with a halo for \"start\" once enough people are seated; a settings row shows sound, microphone and camera toggles; \"how to play\" opens the help page with the recipe's translated sections; a leave action opens a dialog with two buttons.",
     "updates": "Patch updates replace files only. The component keeps no data; removal deletes its files and the application's imports of them."
   },

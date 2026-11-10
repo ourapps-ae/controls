@@ -152,3 +152,17 @@ test("the native fixtures match the TypeScript icons and formatting", () => {
   for (const [n, text] of format.count) assert.equal(formatCount(n), text);
   for (const [ms, text] of format.mmss) assert.equal(mmss(ms), text);
 });
+
+test("the OpenRPC interface names the web functions, icons and theme variables", async () => {
+  const doc = JSON.parse(readFileSync(new URL("../interfaces/controls.json", import.meta.url), "utf8"));
+  assert.equal(doc.openrpc, "1.3.2");
+  assert.deepEqual([doc.info.title, doc.info.version], ["ae/controls", "1.0.0"]);
+  assert.deepEqual(doc.components.schemas.IconName.enum, ICON_NAMES);
+  assert.deepEqual(doc.components.schemas.ThemeVariables.const, [...THEME_VARIABLES]);
+  const web = { ...(await import("../implementation/web/controls.ts")), ...(await import("../implementation/web/icons.ts")), ...(await import("../implementation/web/format.ts")), ...(await import("../implementation/web/dom.ts")) };
+  const nativeOnly = ["helpBulb", "backIcon", "pulseHalo", "controlsTheme", "phoneColumn", "textFor"];
+  for (const method of doc.methods) {
+    if (nativeOnly.includes(method.name)) assert.doesNotMatch(method.description, /^Web/, method.name);
+    else assert.equal(typeof (web as Record<string, unknown>)[method.name], "function", method.name);
+  }
+});
