@@ -33,7 +33,7 @@ No installer settings. Colours, radii and spacing come from the `theme` componen
 - `implementation/web/icons.ts` -> `components/controls/web/icons.ts`
 
 Dependencies: none.
-`tools.lock.json` pins verification tools: node 26.5.0, python3 3.12.8, swiftc 6.4.2, kotlinc 2.2.0, java 26.0.1. Licence wording remains deferred.
+`tools.lock.json` pins verification tools: node 26.5, python3 3.12, swiftc 6.4, kotlinc 2.2, java 26.0. Licence wording remains deferred.
 
 ## Provided interfaces
 - `interfaces/controls.json` defines `controls` (ae/controls) version 1.0.0 as an OpenRPC 1.3.2 document: one method per builder, each description naming the web function, the SwiftUI view and the Compose function (or saying the form exists on one platform only), with options, icon names, help sections and the theme variables read as JSON Schema 2020-12 under `components.schemas`. Callbacks and DOM nodes are described as host values, not serialised.
@@ -53,9 +53,9 @@ None. Local drawing only; no accounts, network or deployment.
 ## Verification
 Node tests run the builders against a small stand-in page (`tests/fake-dom.ts`): classes per variant, accessible names, disabled buttons ignoring taps, toggles asking for the opposite state, dialogs closing on Escape and on the dim area exactly once, help pages dropping empty sections, number and time text, that `controls.css` reads only variables the theme provides, and that the OpenRPC interface's icon names and theme variables equal the code's and every method not marked native-only is an exported web function. The Apple check compiles and runs `tests/apple/main.swift` for macOS (all 19 icon paths parse to points inside the icon box, and the parser's relative, absolute, H, V and smooth-curve cases; text formatting against `tests/fixtures/format.json`) and type-checks every Swift file, with the theme component's, against the iOS simulator SDK. The Android check compiles `Format.kt` and runs `tests/android/Main.kt`; kotlinc was not available where this was written, so it has not been run, and the Compose views are only compiled by the application's Gradle build. Pixel output is not compared.
 
-- `node --test tests/web.test.ts` (web, required-local; tools: node 26.5.0)
-- `python3 tests/native.py apple` (apple, platform; tools: python3 3.12.8, swiftc 6.4.2)
-- `python3 tests/native.py android` (android, platform; tools: python3 3.12.8, kotlinc 2.2.0, java 26.0.1)
+- `node --test tests/web.test.ts` (web, required-local; tools: node 26.5)
+- `python3 tests/native.py apple` (apple, platform; tools: python3 3.12, swiftc 6.4)
+- `python3 tests/native.py android` (android, platform; tools: python3 3.12, kotlinc 2.2, java 26.0)
 
 ## Scenarios and presentation
 A lobby uses a filled icon button with a halo for "start" once enough people are seated; a settings row shows sound, microphone and camera toggles; "how to play" opens the help page with the recipe's translated sections; a leave action opens a dialog with two buttons.
