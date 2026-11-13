@@ -119,6 +119,12 @@
       "executable": false,
       "source": "implementation/web/icons.ts",
       "template": false
+    },
+    {
+      "destination": "components/controls/web/index.ts",
+      "executable": false,
+      "source": "implementation/web/index.ts",
+      "template": false
     }
   ],
   "capabilities": {
@@ -144,7 +150,8 @@
       "components/controls/web/controls.ts",
       "components/controls/web/dom.ts",
       "components/controls/web/format.ts",
-      "components/controls/web/icons.ts"
+      "components/controls/web/icons.ts",
+      "components/controls/web/index.ts"
     ]
   },
   "collect": [],
@@ -271,6 +278,10 @@
     {
       "executable": false,
       "path": "implementation/web/icons.ts"
+    },
+    {
+      "executable": false,
+      "path": "implementation/web/index.ts"
     },
     {
       "executable": false,
