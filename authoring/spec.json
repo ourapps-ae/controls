@@ -1,6 +1,6 @@
 {
   "name": "controls",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "title": "Controls",
   "description": "Buttons, icon buttons, toggles, panels, banners, dialogs and help pages that draw with the theme's tokens, for web, Apple and Android.",
   "facilities": [
