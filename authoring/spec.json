@@ -1,6 +1,6 @@
 {
   "name": "controls",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "title": "Controls",
   "description": "Buttons, icon buttons, toggles, panels, banners, dialogs and help pages that draw with the theme's tokens, for web, Apple and Android.",
   "facilities": [
@@ -82,9 +82,9 @@
     "java": "26.0.1"
   },
   "platforms": [
-    "web",
+    "android",
     "apple",
-    "android"
+    "web"
   ],
   "text": {
     "purpose": "`controls` is the set of small interface pieces every screen is made from: text buttons (primary, outlined, link), round icon buttons (filled, outlined, plain) with an optional pulsing halo meaning \"you can tap this\", round on/off toggles (microphone, camera, sound), panels (with an active state), accent banners, modal dialogs, and a scrolling help page. It also holds the Material icon paths used by the web and Apple parts, a badged-icon helper, and number and time text (`formatCount`, `mmss`). All visible text is passed in already translated; nothing in it is specific to a game.",
@@ -114,5 +114,348 @@
       }
     ],
     "notes": "Pure library; no provider limits apply."
+  },
+  "classes": [
+    {
+      "reference": {
+        "name": "ourapps-ae/controls-class",
+        "version": "1.0.0",
+        "digest": "1e12df7ee495994a566e89ea89bd98d984dde09d834705b4325c2137185e374b"
+      },
+      "descriptor": {
+        "format": 1,
+        "name": "ourapps-ae/controls-class",
+        "version": "1.0.0",
+        "provides": [
+          {
+            "type": "ae/controls",
+            "version": "1.0.0",
+            "path": "classes/controls-class/controls.json",
+            "modules": {
+              "web": [
+                "web/index.ts"
+              ],
+              "android": [
+                "android/src/main/java"
+              ],
+              "ios": [
+                "apple/Sources"
+              ],
+              "macos": [
+                "apple/Sources"
+              ],
+              "tvos": [
+                "apple/Sources"
+              ],
+              "windows": [
+                "web/index.ts"
+              ]
+            }
+          }
+        ],
+        "requires": [
+          {
+            "type": "ae/theme",
+            "version": "1.0.0"
+          }
+        ],
+        "settings": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "inventory": [
+          {
+            "path": "classes/controls-class/check.mjs",
+            "digest": "ced90067fd8bb635c651f7f8e885765c7543d553c6a0a485b864a7bf7f177fae"
+          },
+          {
+            "path": "classes/controls-class/controls.json",
+            "digest": "34547afc0e198a0d45cc963c7377998fe1f7064aea8949fba49a1f2c74cafa2e"
+          },
+          {
+            "path": "classes/controls-class/dom.mjs",
+            "digest": "86898738caef0ab7f081f443afda613ddace1ce302a87d19c430e0e19420a913"
+          },
+          {
+            "path": "classes/controls-class/runtime.mjs",
+            "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+          }
+        ],
+        "verification": [
+          {
+            "id": "shared",
+            "root": "package",
+            "argv": [
+              "node",
+              "classes/controls-class/check.mjs"
+            ],
+            "cwd": ".",
+            "prepare": [],
+            "tools": {
+              "node": "26.5"
+            },
+            "fixtures": [
+              "classes/controls-class/check.mjs"
+            ],
+            "locks": [],
+            "network": false,
+            "timeoutSeconds": 60,
+            "expectedExit": 0,
+            "scope": "required-local",
+            "requirements": []
+          }
+        ]
+      }
+    }
+  ],
+  "implements": [
+    {
+      "name": "ourapps-ae/controls-class",
+      "version": "1.0.0",
+      "digest": "1e12df7ee495994a566e89ea89bd98d984dde09d834705b4325c2137185e374b"
+    }
+  ],
+  "upstream": [
+    {
+      "name": "material-design-icons",
+      "version": "snapshot-fe9155e829782a937bc5025a42a4598b128d482d5fff82dcb3a51777f3242cec",
+      "revision": "sha256:fe9155e829782a937bc5025a42a4598b128d482d5fff82dcb3a51777f3242cec",
+      "repository": "https://github.com/google/material-design-icons",
+      "purl": "pkg:generic/google/material-design-icons@snapshot-fe9155e829782a937bc5025a42a4598b128d482d5fff82dcb3a51777f3242cec",
+      "licence": "Apache-2.0",
+      "notices": [
+        "notices/material-design-icons/LICENSE"
+      ],
+      "delivery": {
+        "kind": "bundled",
+        "files": [
+          {
+            "path": "implementation/web/icons.ts",
+            "digest": "8b251e743e13b26938c2dc5358b9c212ef7ebcd5de4bb80a51f8d79fc73c5331"
+          },
+          {
+            "path": "implementation/apple/Sources/IconPaths.swift",
+            "digest": "f486afe6e19452a47c69562253a649b72b519dbbbcae48e95239951df1e2c511"
+          },
+          {
+            "path": "tests/fixtures/icons.json",
+            "digest": "fe9155e829782a937bc5025a42a4598b128d482d5fff82dcb3a51777f3242cec"
+          }
+        ]
+      }
+    }
+  ],
+  "compatibility": {
+    "runtimes": {
+      "node": ">=26.5.0 <27.0.0",
+      "swift": "=6.4.2",
+      "ios": ">=17.0.0",
+      "macos": ">=14.0.0",
+      "tvos": ">=17.0.0",
+      "kotlin": "=2.3.20",
+      "java": ">=17.0.0 <27.0.0",
+      "android": ">=8.0.0"
+    },
+    "frameworks": {
+      "android-ui": {
+        "name": "androidx.compose.ui",
+        "range": "=1.10.0"
+      }
+    },
+    "dependencies": [
+      {
+        "name": "pkg:maven/androidx.compose.ui/ui",
+        "version": "1.10.0",
+        "isolation": "shared"
+      },
+      {
+        "name": "pkg:maven/androidx.compose.material3/material3",
+        "version": "1.4.0",
+        "isolation": "shared"
+      }
+    ],
+    "styles": {
+      "scope": "global",
+      "namespaces": [
+        ".banner .text::flex",
+        ".banner::-webkit-backdrop-filter",
+        ".banner::align-items",
+        ".banner::backdrop-filter",
+        ".banner::background",
+        ".banner::border",
+        ".banner::border-radius",
+        ".banner::color",
+        ".banner::display",
+        ".banner::font-size",
+        ".banner::font-weight",
+        ".banner::gap",
+        ".banner::max-width",
+        ".banner::padding",
+        ".banner::width",
+        ".btn.block::width",
+        ".btn.danger::color",
+        ".btn.ghost::background",
+        ".btn.ghost::border",
+        ".btn.ghost::color",
+        ".btn.link::background",
+        ".btn.link::color",
+        ".btn.link::padding",
+        ".btn::background",
+        ".btn::border-radius",
+        ".btn::color",
+        ".btn::font-weight",
+        ".btn::padding",
+        ".btn:disabled::cursor",
+        ".btn:disabled::opacity",
+        ".glow::before::animation",
+        ".glow::before::background",
+        ".glow::before::border-radius",
+        ".glow::before::content",
+        ".glow::before::inset",
+        ".glow::before::position",
+        ".glow::before::z-index",
+        ".glow::position",
+        ".grow::flex",
+        ".help h3::color",
+        ".help h3::font-size",
+        ".help h3::margin",
+        ".help p::font-size",
+        ".help p::white-space",
+        ".ic-badge::align-items",
+        ".ic-badge::background",
+        ".ic-badge::border-radius",
+        ".ic-badge::color",
+        ".ic-badge::display",
+        ".ic-badge::height",
+        ".ic-badge::justify-content",
+        ".ic-badge::position",
+        ".ic-badge::right",
+        ".ic-badge::top",
+        ".ic-badge::width",
+        ".ic-badged::display",
+        ".ic-badged::position",
+        ".icbtn.ghost::background",
+        ".icbtn.ghost::border",
+        ".icbtn.ghost::color",
+        ".icbtn.ghost:disabled::cursor",
+        ".icbtn.ghost:disabled::opacity",
+        ".icbtn.gold::background",
+        ".icbtn.gold::color",
+        ".icbtn.gold:disabled::background",
+        ".icbtn.gold:disabled::color",
+        ".icbtn.gold:disabled::cursor",
+        ".icbtn.gold:disabled::opacity",
+        ".icbtn.plain::background",
+        ".icbtn.plain::color",
+        ".icbtn.plain::height",
+        ".icbtn.plain::width",
+        ".icbtn::align-items",
+        ".icbtn::border-radius",
+        ".icbtn::display",
+        ".icbtn::flex",
+        ".icbtn::height",
+        ".icbtn::justify-content",
+        ".icbtn::padding",
+        ".icbtn::width",
+        ".iconbtn.danger::color",
+        ".iconbtn::align-items",
+        ".iconbtn::background",
+        ".iconbtn::border-radius",
+        ".iconbtn::color",
+        ".iconbtn::display",
+        ".iconbtn::font-size",
+        ".iconbtn::height",
+        ".iconbtn::justify-content",
+        ".iconbtn::width",
+        ".modal .panel::background",
+        ".modal .panel::max-width",
+        ".modal .panel::width",
+        ".modal::align-items",
+        ".modal::background",
+        ".modal::display",
+        ".modal::inset",
+        ".modal::justify-content",
+        ".modal::padding",
+        ".modal::position",
+        ".modal::z-index",
+        ".muted::color",
+        ".muted::font-size",
+        ".panel .title::color",
+        ".panel .title::font-weight",
+        ".panel .title::margin-bottom",
+        ".panel.active::background",
+        ".panel.active::border",
+        ".panel::-webkit-backdrop-filter",
+        ".panel::backdrop-filter",
+        ".panel::background",
+        ".panel::border",
+        ".panel::border-radius",
+        ".panel::box-shadow",
+        ".panel::max-width",
+        ".panel::padding",
+        ".panel::width",
+        ".row::align-items",
+        ".row::display",
+        ".row::gap",
+        ".spread::justify-content",
+        ".toggle.off::background",
+        ".toggle.off::color",
+        ".toggle.on::background",
+        ".toggle.on::color",
+        ".toggle::align-items",
+        ".toggle::border-radius",
+        ".toggle::display",
+        ".toggle::font-size",
+        ".toggle::height",
+        ".toggle::justify-content",
+        ".toggle::width",
+        ".toggle:disabled::cursor",
+        ".toggle:disabled::opacity",
+        ".toggles::display",
+        ".toggles::gap",
+        ".toggles::justify-content",
+        "@keyframes pulse",
+        "button::border",
+        "button::cursor",
+        "button::font",
+        "button:focus-visible::outline",
+        "button:focus-visible::outline-offset",
+        "input:focus-visible::outline",
+        "input:focus-visible::outline-offset",
+        "select:focus-visible::outline",
+        "select:focus-visible::outline-offset"
+      ],
+      "conflicts": []
+    }
+  },
+  "maintenance": {
+    "owners": [
+      "Level N Ltd"
+    ],
+    "contact": "https://github.com/ourapps-ae/controls/issues",
+    "repository": "https://github.com/ourapps-ae/controls",
+    "updates": {
+      "source": "https://github.com/ourapps-ae/controls/releases",
+      "strategy": "manual"
+    }
+  },
+  "supportedPlatforms": [
+    "android",
+    "ios",
+    "macos",
+    "tvos",
+    "web",
+    "windows"
+  ],
+  "licence": "Apache-2.0",
+  "licenceFile": "LICENCE",
+  "noticeFile": "NOTICE",
+  "templates": [],
+  "modules": {
+    "web": "web/index.ts",
+    "android": "android/src/main/java",
+    "apple": "apple/Sources"
   }
 }
